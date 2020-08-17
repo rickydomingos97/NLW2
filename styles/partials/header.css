@@ -1,0 +1,66 @@
+.page-header {
+    background-color: var(--color-primary);
+    display: flex;/*dispoe os elementos em linha*/
+    flex-direction: column;/*dispoe os elementos que estavam em linha para disposição em colunas*/
+}
+
+.page-header .top-bar-container {
+    width: 90%;
+    margin: 0 auto;/*em cima e em baixo 0 e auto nas laterais*/
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 0;/*1.6rem em cima e em baixo e o nas laterais*/
+}
+
+.page-header .top-bar-container a {
+    height: 3.2rem;
+    transition: opacity 0.2s;
+}
+
+.page-header .top-bar-container a:hover {
+    opacity: 0.6;
+}
+
+.page-header .top-bar-container img {
+    height: 1.6rem;
+}
+
+.page-header .header-content {
+    width: 90%;
+    margin: 3.2rem auto;
+
+    position: relative;/*nao tem efeitos no mobile*/
+}
+
+.page-header .header-content strong {
+    font: 700 3.6rem Archivo;
+    line-height: 4.2rem;
+    color: var(--color-title-in-primary);
+}
+
+@media (min-width:700px) {
+    .page-header {
+        height: 340px;
+    }
+
+    .page-header .top-bar-container {
+        max-width: 1100px;
+    }
+
+    .page-header .header-content {
+        max-width: 740px;
+
+        margin: 0 auto;/*retira todas as margens em cima e em baixo e automatico nas laterais || para dar o efeito de sobreposição do search bar em relação ao header*/
+
+        flex: 1 1;/*estica todo o conteudo dentro da caixa*/
+        padding-bottom: 48px;
+        display: flex;
+        flex-direction: column;/*garante que todos os elementos vao estar um ao lado do outro*/
+        justify-content: center;/*com esse comando todos os items estao alinhados ao centro, para resolver vá ao search-teachers e adicione um bottom: -28px para baixar o search box*/
+    }
+
+    .page-header .header-content strong {
+        max-width: 350px;
+    }
+}
