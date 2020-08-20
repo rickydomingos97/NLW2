@@ -10,6 +10,7 @@
 
     <link rel="stylesheet" href="/styles/main.css">
     <link rel="stylesheet" href="/styles/partials/header.css">
+    <link rel="stylesheet" href="/styles/partials/forms.css">
     <link rel="stylesheet" href="/styles/partials/page-give-classes.css">
 
     <link
@@ -28,13 +29,34 @@
             </div>
 
             <div class="header-content">
-                <strong>Que bom que você quert dar aulas</strong>
+                <strong>Que incrível que você quer dar aulas</strong>
                 <p>O primeiro passo, é preencher esse formulário de inscrição</p>
             </div>
         </header>
 
         <main>
+            <form action="" id="create-class">
+                <fieldset>
+                    <legend>Seus Dados</legend>
 
+                    <div class="input-block">
+                        <label for="name">Nome completo</label>
+                        <input name="name" id="name" required>
+                    </div>
+                    <div class="input-block">
+                        <label for="avatar">Link da sua foto <small>(comece com http://)</small></label>
+                        <input name="name" id="name" required>
+                    </div>
+                    <div class="input-block">
+                        <label for="whatsapp">Whatsapp <small>(somente números)</small></label>
+                        <input name="whatsapp" id="whatsapp" type="number" required>
+                    </div>
+                    <div class="textarea-block">
+                        <label for="bio">Biografia</label>
+                        <textarea name="bio" id="bio" cols="30" rows="10" required></textarea>
+                    </div>
+                </fieldset>
+            </form>
         </main>
     </div>
 

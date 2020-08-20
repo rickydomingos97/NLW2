@@ -1,0 +1,43 @@
+.select-block label,
+.input-block label,
+.textarea-block label {
+    font-size:1.4rem;
+}
+
+.input-block input,
+.select-block select,
+.textarea-block textarea {
+    width: 100%;
+    height: 5.6rem;
+    margin-top: 0.8rem;
+    border-radius: 0.8rem;
+    background: var(--color-input-background);
+    border: 1px solid var(--color-line-in-white);
+    outline: 0;/*cor que aparece quando um item é clicado na seleção*/
+    padding: 0 1.6rem;
+    font: Archivo 1.6rem;
+}
+
+.textarea-block textarea {
+    padding: 1.2rem 1.6rem;
+    height: 16rem;
+    resize: vertical;/*par anao poder mover o textarea na horizontal com o mouse*/
+}
+/*Pra poder pegar a linha fo focus no textarea tem de setar ele no block como relativo e logo abaixo no focus-within tem de ser absoluto*/
+.input-block,
+.textarea-block {
+    position: relative;
+}
+.input-block:focus-within::after,
+.textarea-block:focus-within::after {
+    /*:after é um elemento que o CSS vai criar no memomento que um input estiver em FOCO*/
+    content: "";/*O CONTENT:""; É OBRIGATÓRIO!!! essa linha tem de ser introduzida para que o elemento :after nao esteja vazio no html*/
+    width: calc(100% - 3.2rem);
+    height: 2px;
+    background: var(--color-primary-light);
+    /*Position: absolute | necessario definir todas as posições dos elementos em relação a pagina*/
+    position: absolute;
+    left: 1.6rem;
+    /*right: 1.6rem; | nao é necessario adicionar o right por que em width calc ja foi calculado o tamanho no espaco do input*/
+    bottom: 0;
+}
