@@ -94,7 +94,7 @@
                             <label for="weekday">Dia da semana</label>
                             <!--o weekday[] pode vir com mais de um valor por isso ele recebeu o []-->
                             <select name="weekday[]"><!--O ID foi removido para nao ser duplicado quando adicionado um novo horário-->
-                            <option value="" disabled="" hidden="" required>Selecione uma opção</option>
+                            <option value="" required>Selecione uma opção</option>
                             <option value="0">Domingo</option>
                             <option value="1">Segunda-feira</option>
                             <option value="2">Terça-feira</option>
@@ -117,6 +117,14 @@
                     </div>
                 </fieldset>
             </form>
+
+            <footer>
+                <p>
+                    <img src="/images/icons/warning.svg" alt="Aviso importante">
+                    Impotante! <br> Preencha todos os dados
+                </p>
+                <button type="submit" form="create-class">Salvar cadastro</button><!--O botao está fora do FORM, e para ser enviado como parte do form ele tem de ser referenciado pelo ID do formulario-->
+            </footer>
         </main>
     </div>
 
