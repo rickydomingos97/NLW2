@@ -2,6 +2,10 @@
     width: 100vw;
     height: 100vh;
 }
+/*da um espaço no p que ta dentrodo header-content*/
+#page-give-classes .page-header .header-content {
+    margin-bottom: 6.4rem;
+}
 
 #page-give-classes main {
     background: var(--color-box-base);
@@ -28,9 +32,19 @@
     justify-content: space-between;
 
     width: 100%;
-    
+
     padding-bottom: 1.6rem;
     border-bottom: 1px solid var(--color-line-in-white);
+}
+
+#page-give-classes fieldset+fieldset {
+    margin-top: 6.4rem;
+}
+/*da espaçamento nos elemento anteriores a eles || selecione um input-block que tenha um select-block anterior a ele e aplique o margim-top*/
+#page-give-classes .input-block+.input-block,
+#page-give-classes .input-block+.textarea-block,
+#page-give-classes .select-block+.input-block {
+    margin-top: 2.4rem;
 }
 
 @media (min-width: 700px) {
