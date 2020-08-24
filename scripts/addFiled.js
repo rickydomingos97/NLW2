@@ -11,8 +11,8 @@
 
    // For each field, to clear!
    fields.forEach(function(field) {
-        //get the field on instance
-        console.log(field)
+        //get the field of the moment and clear it
+        field.value = ""
    })
    // to show on page. where???
    document.querySelector('#schedule-items').appendChild(newFieldContainer)
