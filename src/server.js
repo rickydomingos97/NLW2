@@ -22,6 +22,20 @@ const proffys = [{
         time_to: [1220]
     }
 ]
+
+function pageLanding(req, res) {
+    return res.render(__dirname + "/views/index.html")
+}
+
+function pageStudy (req, res) {
+    return res.render(__dirname + "/views/study.html")
+}
+
+function pageGiveClasses (req, res) {
+    return res.render(__dirname + "/views/give-classes.html")
+}
+
+
 // importando o express
 const express = require('express')
 const server = express()
@@ -34,25 +48,14 @@ const nunjucks = require('nunjucks')
 nunjucks.configure('src/views' {
     express: server,
     noCache: true, // Não guardar na memoria alguns arquivos para manter a aplicação mais rapida! para termos a versao mais atualizada da aplicação naquele momento
-    
-    
-    
-    
 })
 
 server
 // configurar arquivos  estáticos (css scripts, images)
-server.use(express.static("public"))
+    .use(express.static("public"))
 // rotas da aplicação
-    .get("/", (req, res) => {
-        return res.sendFile(__dirname + "/views/index.html")
-    })
-    .get("/study", (req, res) => {
-        return res.sendFile(__dirname + "/views/study.html")
-    })
-
-    .get("/give-classes", (req, res) => {
-        return res.sendFile(__dirname + "/views/give-classes.html")
-    })
+    .get("/", pageLanding)
+    .get("/study", pageStudy)
+    .get("/give-classes",)
 
     .listen(5500)
