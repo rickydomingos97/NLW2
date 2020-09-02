@@ -23,39 +23,42 @@ const proffys = [{
     }
 ]
 
+// com o caminho dos aeqwuivos ja foi indicado no nunjucks, podemos remover o __dirname + o caminho e apenas pedir para renderizar o arquivo na function logo abaixo:
+// BEFORE: return res.render(__dirname + "/views/index.html")
+// AFTER: 
 function pageLanding(req, res) {
-    return res.render(__dirname + "/views/index.html")
+    return res.render("index.html")
 }
 
-function pageStudy (req, res) {
-    return res.render(__dirname + "/views/study.html")
+function pageStudy(req, res) {
+    return res.render("study.html")
 }
 
-function pageGiveClasses (req, res) {
-    return res.render(__dirname + "/views/give-classes.html")
+function pageGiveClasses(req, res) {
+    return res.render("give-classes.html")
 }
 
 
 // importando o express
 const express = require('express')
-const server = express()
+const server = express() // esse server nos retorna um objeto
 //importando o nunjucks
 const nunjucks = require('nunjucks')
 // configurar nnjucks
 // dizer ao nunjucks onde estao os arquivos html
 // enviar um objeto com algumas configurações do servidor express
 // em seguida ele vai saber o que tem de fazer com o server 
-nunjucks.configure('src/views' {
+nunjucks.configure('src/views', {
     express: server,
-    noCache: true, // Não guardar na memoria alguns arquivos para manter a aplicação mais rapida! para termos a versao mais atualizada da aplicação naquele momento
+    noCache: true, // nao guardar arqeuivos na memoria agora pois estamos editando ainda
 })
 
 server
-// configurar arquivos  estáticos (css scripts, images)
+    // configurar arquivos  estáticos (css scripts, images)
     .use(express.static("public"))
-// rotas da aplicação
+    // rotas da aplicação
     .get("/", pageLanding)
     .get("/study", pageStudy)
-    .get("/give-classes",)
+    .get("/give-classes", pageGiveClasses)
 
     .listen(5500)
