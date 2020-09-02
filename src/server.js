@@ -35,6 +35,18 @@ const proffys = [{
     }
 ]
 
+const subjects = [
+    "Artes",
+    "Biologia",
+    "Ciências",
+    "Educação física",
+    "Física",
+    "Geografia",
+    "História",
+    "Matemática",
+    "Português",
+    "Química",                          
+]
 // com o caminho dos aeqwuivos ja foi indicado no nunjucks, podemos remover o __dirname + o caminho e apenas pedir para renderizar o arquivo na function logo abaixo:
 // BEFORE: return res.render(__dirname + "/views/index.html")
 // AFTER: 
@@ -44,7 +56,12 @@ function pageLanding(req, res) {
 // renderizando objeto dentro do render:
 //passando objetos para dentro da function
 function pageStudy(req, res) {
-    return res.render("study.html" , { proffys })
+    const filters = req.query
+    return res.render("study.html", {
+        proffys,
+        filters,
+        subjects
+    })
 }
 
 function pageGiveClasses(req, res) {

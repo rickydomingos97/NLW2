@@ -20,6 +20,5 @@ para rodar um servidor que nao precisa ficar ligando e desligando a cada nova se
 -D significa: rodar somente em modo de desenvolvimento!
 
 Instalando uma Template Engine:
-npm install numjucks
+npm install nunjucks
     Configurar o servidor para usar o nunjucks!
-        
