@@ -18,6 +18,7 @@ to create the server.js file
 para rodar um servidor que nao precisa ficar ligando e desligando a cada nova sessão:
     npm install nodemon -D
 -D significa: rodar somente em modo de desenvolvimento!
+(Eu clonei o arquivo no github pra rodar no linux e tive de deletar os arquivos nodemon dentro da pasta node.modules e reinstalar o nodemon antes de rodar o server.)
 
 Instalando uma Template Engine:
 npm install nunjucks

@@ -41,3 +41,9 @@
     /*right: 1.6rem; | nao é necessario adicionar o right por que em width calc ja foi calculado o tamanho no espaco do input*/
     bottom: 0;
 }
+
+label small {
+    font-size: 1.2rem;
+    padding-left: 1.2rem;
+    color: var(--color-small-info);
+}
