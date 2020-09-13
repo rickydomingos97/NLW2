@@ -23,3 +23,11 @@ para rodar um servidor que nao precisa ficar ligando e desligando a cada nova se
 Instalando uma Template Engine:
 npm install nunjucks
     Configurar o servidor para usar o nunjucks!
+
+// INSTALANDO O SQL LITE:
+
+    Na pasta source, criar uma pasta chamada: database,
+        denro da pasta criar um arquivo chamado db.js,
+        abrir o terminal e rodar o comando "npm install sqlite-async"
+// INSTALAR O PLUGIN SQLITE para VSCODE
+
