@@ -1,12 +1,12 @@
 //Importando o modulo sqlite
 const Database = require('sqlite-async')
-//Abrindo o banco de dados concatenando com o caminho da pasta
-// incluindo o then() para que o JS pare aqui antes de continuar a rodar o codigo.
-Database.open(__dirname + '/database.sqlite').then(execute)
+
 //O db é um objeto. e sendo assim tem funcionalidades
+// aqui a function esta em memoria e so sera executada quando abrir o Database
 function execute(db){
 // criar as tabelas do banco de dados.
-    db.exec(`
+// return foi colocado para preparar para a exportação do db
+    return db.exec(`
         CREATE TABLE IF NOT EXISTS proffys (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name TEXT,
@@ -31,3 +31,7 @@ function execute(db){
         );
     `)
 }
+//Abrindo o banco de dados concatenando com o caminho da pasta
+// incluindo o then() para que o JS pare aqui antes de continuar a rodar o codigo.
+// o module.exports vai exportar o database
+module.exports = Database.open(__dirname + '/database.sqlite').then(execute)
