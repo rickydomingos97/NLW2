@@ -31,3 +31,5 @@ npm install nunjucks
         abrir o terminal e rodar o comando "npm install sqlite-async"
 // INSTALAR O PLUGIN SQLITE para VSCODE
 
+
+
