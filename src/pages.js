@@ -1,3 +1,5 @@
+const Database = require('./database/db.js')
+
 const { subjects, weekdays, getSubject } = require('./utils/format.js')
 
 function pageLanding(req, res) {
