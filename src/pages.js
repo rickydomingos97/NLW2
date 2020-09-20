@@ -8,6 +8,22 @@ function pageLanding(req, res) {
 // renderizando objeto dentro do render: passando objetos para dentro da function
 function pageStudy(req, res) {
     const filters = req.query
+
+    const query = `
+        SELECT classes.*, proffys.*
+        FROM proffys
+        JOIN classes ON (classes.proffy_id = proffy_id)
+        WHERE EXISTS (
+            SELECT class_schedule.*
+            FROM class_schedule
+            WHERE class_schedule.class_id = classes.id
+            AND class_schedule.weekday = ${filters.weekdays}
+            AND class_schedule.time_from <= ${filters.time_from}
+            AND class_schedule.time_to > ${filters.time_to}
+        )
+    
+    `
+
     return res.render("study.html", { proffys, filters, subjects, weekdays })
 }
 
