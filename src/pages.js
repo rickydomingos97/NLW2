@@ -1,6 +1,6 @@
 const Database = require('./database/db.js')
 
-const { subjects, weekdays, getSubject } = require('./utils/format.js')
+const { subjects, weekdays, getSubject, convertHoursToMinutes } = require('./utils/format.js')
 
 function pageLanding(req, res) {
     return res.render("index.html")
@@ -13,7 +13,8 @@ function pageStudy(req, res) {
         return res.render("study.html", { filters, subjects, weekdays })
     }
 
-    console.log('nao tem campos vazios')
+    // converter horas em minutos
+    const timeToMinutes = convertHoursToMinutes(filters.time)
 
     const query = `
         SELECT classes.*, proffys.*
@@ -24,13 +25,10 @@ function pageStudy(req, res) {
             FROM class_schedule
             WHERE class_schedule.class_id = classes.id
             AND class_schedule.weekday = ${filters.weekdays}
-            AND class_schedule.time_from <= ${filters.time}
-            AND class_schedule.time_to > ${filters.time}
+            AND class_schedule.time_from <= ${timeToMinutes}
+            AND class_schedule.time_to > ${timeToMinutes}
         )
-    
-    `
-
-    
+    `    
 }
 
 function pageGiveClasses(req, res) {
