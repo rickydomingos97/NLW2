@@ -9,7 +9,7 @@ function pageLanding(req, res) {
 function pageStudy(req, res) {
     const filters = req.query
 
-    if (!filters.subject || !filters.weekdays || !filters.time) {
+    if (!filters.subject || !filters.weekday || !filters.time) {
         return res.render("study.html", { filters, subjects, weekdays })
     }
 
