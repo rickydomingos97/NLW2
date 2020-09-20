@@ -9,6 +9,12 @@ function pageLanding(req, res) {
 function pageStudy(req, res) {
     const filters = req.query
 
+    if (!filters.subject || !filters.weekdays || !filters.time) {
+        return res.render("study.html", { filters, subjects, weekdays })
+    }
+
+    console.log('nao tem campos vazios')
+
     const query = `
         SELECT classes.*, proffys.*
         FROM proffys
@@ -18,13 +24,13 @@ function pageStudy(req, res) {
             FROM class_schedule
             WHERE class_schedule.class_id = classes.id
             AND class_schedule.weekday = ${filters.weekdays}
-            AND class_schedule.time_from <= ${filters.time_from}
-            AND class_schedule.time_to > ${filters.time_to}
+            AND class_schedule.time_from <= ${filters.time}
+            AND class_schedule.time_to > ${filters.time}
         )
     
     `
 
-    return res.render("study.html", { proffys, filters, subjects, weekdays })
+    
 }
 
 function pageGiveClasses(req, res) {
