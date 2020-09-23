@@ -60,13 +60,15 @@
         <main>
 
             {% if proffys == "" %}
-                <p class="no-results"> Nenhum professor encontrado com a sua pesquisa.</p>
+                <p class="no-results">Nenhum professor encontrado com a sua pesquisa.</p>
             {% else %}
 
-                {% for proffy in proffys %}
+                {%for proffy in proffys %}
                     <article class="teacher-item">
                         <header>
-                            <img src="{{proffy.avatar}}" alt="{{proffy.name}}">
+                            <img
+                            src="{{proffy.avatar}}"
+                            alt="{{proffy.name}}">
                             <div>
                                 <strong>{{proffy.name}}</strong>
                                 <span>{{proffy.subject}}</span>

@@ -37,7 +37,7 @@
         </header>
 
         <main>
-            <form action="" id="create-class">
+            <form action="/save-classes" id="create-class" method="POST"> <!--POST para esconder os dados do formulario-->
                 <fieldset>
                     <legend>Seus Dados</legend>
 
@@ -47,7 +47,7 @@
                     </div>
                     <div class="input-block">
                         <label for="avatar">Link da sua foto <small>(comece com http://)</small></label>
-                        <input name="name" id="name" required>
+                        <input name="avatar" id="avatar" required>
                     </div>
                     <div class="input-block">
                         <label for="whatsapp">Whatsapp <small>(somente números)</small></label>

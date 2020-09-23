@@ -17,7 +17,7 @@ Database.then(async (db) => {
         // o proffy_id virá do banco de dados
     }
 
-    classScheduleValue = [
+    classScheduleValues = [
         // class_id virá pelo bando de dados, após cadastrarmos a class
         {
             weekday: 1,
@@ -31,13 +31,13 @@ Database.then(async (db) => {
         }
     ]
     
-   // await createProffy(db, {proffyValue, classValue, classScheduleValue})
+   // await createProffy(db, {proffyValue, classValue, classScheduleValues})
 
     // Consultar os dados inseridos
 
     // todos os proffys
-    const selectProffys = await db.all("SELECT * FROM proffys")
-    // console.log(selectProffys)
+    const selectedProffys = await db.all("SELECT * FROM proffys")
+    //console.log(selectedProffys)
 
     // consultar as classes  de um determinado professor
     // e trazer junto os dados do professor
