@@ -12,23 +12,23 @@ Proffy project for teaching and learning classes on-line
 # Node
 # GITHUB
 
-# DEPENDENCIAS:
+## DEPENDENCIAS:
 
 # INTRUÇÕES:
 
 install node: from node.org
-## start the project:
+# start the project:
 install npm init -y;
 Dependencies:
-## express
+# express
 npm install express
-## nodemon
+# nodemon
 npm install nodemon -D
-## nujucks
+# nujucks
 Template Engine:
 npm install nunjucks
-## sqlite
+# sqlite
 npm install sqlite-async
 
-## VS Code plugins:
+# VS Code plugins:
 SQlite
